@@ -1,4 +1,6 @@
+#include <stdio.h>
 #include <string.h>
+
 #include <ADuCM360.h>
 
 #include <WdtLib.h>
@@ -7,17 +9,16 @@
 #include <IntLib.h>
 #include <UrtLib.h>
 
-#include "Shico_Lib.h"
+#define TRUE		1
+#define FALSE		0
 
-#define TRUE  		1
-#define RETURN	'\n'
-#define Cap2Low(Ch)	(((Ch) >= 'A') && ((Ch) <= 'Z'))? (Ch-'A'+'a'):Ch
-
+uint8_t ucTxBufferEmpty  = 0; // Used to indicate that the UART Tx buffer is empty
+uint8_t ucRxBufferFull  = 0; // Used to indicate that the UART Rx buffer is full
+uint8_t ucUartError  = 0; // Used to indicate that the UART Rx buffer is full
 
 uint8_t szTemp[64] = "";
-volatile uint8_t ucComRx = 0;
-uint8_t nLen = 0;
 
+volatile uint8_t ucCOMIID0 = 0;
 
 void WatchDogInit(void){
 	//---------- Disable Watchdog timer resets ----------
@@ -57,15 +58,12 @@ void UARTInit(void){
    UrtIntCfg(pADI_UART,COMIEN_ERBFI|COMIEN_ETBEI|COMIEN_ELSI|COMIEN_EDSSI|COMIEN_EDMAT|COMIEN_EDMAR);  // Setup UART IRQ sources
 }
 
-//------------------------------------------------------------------
-void delay (long int length)
-{
+void delay(long int length){
    while(length)
       length--;
 }
 
-void Chip_Initialize()
-{
+void Chip_Initialize(){
    WatchDogInit();
    ClockInit();
    GPIOInit();
@@ -73,84 +71,69 @@ void Chip_Initialize()
    NVIC_EnableIRQ(UART_IRQn);
 }
 
-void menu_display(void)
-{
-	printf("*************************************************************\n");
-	printf("**                                                           \n");		
-	printf("**   Note :                                                  \n");					 
-	printf("**   ADuCM360 EVM board Test Program                         \n");		
-	printf("**                                                           \n");		
-	printf("** Usage :                                                   \n");					 
-	printf("** LoveJongSu]set addr val                                   \n");					 
-	printf("** LoveJongSu]get addr                                       \n");					 			 
-	printf("**                                                           \n");		
-	printf("**                       2013, 10, 23  By Lim Jong Su        \n");	 
-	printf("**                                                           \n");		
-	printf("*************************************************************\n");
-	printf("*           1.  PWM Test                                    *\n");               
-	printf("**                                                          *\n");		
-	printf("             ขั m.  Main Menu display                      \n");
-	printf("***********************************************************\n\n");
-}
-//------------------------------------------------------------------
+void SendMsg(uint8_t *str){
+	uint16_t len =0 , i;
 
-int main()
-{
-	uint8_t d, addr;
-
+	len = strlen((char*)str);
+	for(i=0; i<len; i++){
+		ucTxBufferEmpty = 0;
+      	UrtTx(pADI_UART, str[i]);
+      	while (ucTxBufferEmpty == 0) {};
+	}
 	
-   	Chip_Initialize();
-   
-   	while(TRUE){
-   		printf("Shico]"); 
-		gets(szTemp);
-		d=szTemp[0];
+}
 
-		if (d == 'm')	{
-			addr = d;
-		} else if (d == RETURN ) {			
-			addr = 'r';
-		} else if (Cap2Low(d) == 'g') {
-			MemoryDump((char *)szTemp);
-			addr = 'r';
-		} else if (Cap2Low(d) == 's') {
-			MemorySet((char *)szTemp);
-			addr='r';
-		} else
-		{
-			addr = hextoint(szTemp);
+void ReadMsg(void){
+	uint8_t cnt = 0, ch ;
+	volatile uint8_t ucCOMIID0 = 0;
+
+	sprintf((char *)szTemp, "");
+	
+	do{
+		if ((ucCOMIID0 & 0x7) == 0x4){
+			ch = UrtRx(pADI_UART);
+			szTemp[cnt] = ch;
+			cnt++;
 		}
-		szTemp[0] = 0;
-		switch(addr){				
-			case 0x1 :
-				printf("PWM Test\n");
-			break;
-		case 'm'  :	
-			menu_display();								
-			break;
-		default:														   
-			break;
-		}	
+	}while(cnt == 3);
+
+}
+
+int main(){
+	sprintf((char *)szTemp, "Input Text\r\n");
+
+	//Initialize
+   	Chip_Initialize();
+
+   	SendMsg(szTemp);
+   	while(TRUE){
+		SendMsg("HHH");
+		delay(100000);
+		if(ucUartError){
+		}
+		if(ucRxBufferFull){
+			SendMsg("MMMMMM");
+			ReadMsg();
+			SendMsg(szTemp);
+			sprintf((char *)szTemp, "");
+			sprintf((char *)szTemp, "Input Text\r\n");
+			SendMsg(szTemp);
+			ucRxBufferFull = 0;
+		}
    	}
    	return 0;
 }
 
-
-
-//------------------------------------------------------------------
-
 void UART_Int_Handler()
 {
-   volatile uint8 ucCOMIID0 = 0;
-
-	ucCOMIID0 = UrtIntSta(pADI_UART);   // Read UART Interrupt ID register
-   if ((ucCOMIID0 & 0x7) == 0x2)       // Transmit buffer empty
-   {
-      ucTxBufferEmpty = 1;
-   }
-   if ((ucCOMIID0 & 0x7) == 0x4)       // // Receive byte
-   {
-	   GetStrTmp=UrtRx(pADI_UART);
-	   ucWaitForUart = 1;
-   }
-} 
+	ucCOMIID0 = UrtIntSta(pADI_UART);   	// Read UART Interrupt ID register
+   	if ((ucCOMIID0 & 0x7) == 0x2){       	// Transmit buffer empty
+   		ucTxBufferEmpty = TRUE;
+   	}
+   	if ((ucCOMIID0 & 0x7) == 0x4){       	// Receive byte
+	   ucRxBufferFull = TRUE;
+   	}
+	if ((ucCOMIID0 & 0x7) == 0x6){       	// error
+	   ucUartError = TRUE;
+   	}
+}

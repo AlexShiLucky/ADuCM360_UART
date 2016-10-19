@@ -1938,9 +1938,6 @@
     <file>
       <name>$PROJ_DIR$\..\..\src\main.c</name>
     </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\src\Shico_Lib.c</name>
-    </file>
   </group>
   <file>
     <name>$PROJ_DIR$\..\..\inc\common\IAR\startup_ADuCM360.s</name>
