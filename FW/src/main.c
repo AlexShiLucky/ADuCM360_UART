@@ -12,13 +12,13 @@
 #define TRUE		1
 #define FALSE		0
 
-uint8_t ucTxBufferEmpty  = 0; // Used to indicate that the UART Tx buffer is empty
-uint8_t ucRxBufferFull  = 0; // Used to indicate that the UART Rx buffer is full
-uint8_t ucUartError  = 0; // Used to indicate that the UART Rx buffer is full
+volatile uint8_t ucTxBufferEmpty  = 0; // Used to indicate that the UART Tx buffer is empty
+volatile uint8_t ucRxBufferFull  = 0; // Used to indicate that the UART Rx buffer is full
 
-uint8_t szTemp[64] = "";
+uint8_t szTemp[128] = "";
 
 volatile uint8_t ucCOMIID0 = 0;
+volatile uint8_t ucComRx = 0;
 
 void WatchDogInit(void){
 	//---------- Disable Watchdog timer resets ----------
@@ -71,54 +71,47 @@ void Chip_Initialize(){
    NVIC_EnableIRQ(UART_IRQn);
 }
 
+void SendChar(uint8_t ch){
+	ucTxBufferEmpty = 0;
+    UrtTx(pADI_UART, ch);
+    while (ucTxBufferEmpty == 0) {};
+}
+
 void SendMsg(uint8_t *str){
 	uint16_t len =0 , i;
 
 	len = strlen((char*)str);
 	for(i=0; i<len; i++){
-		ucTxBufferEmpty = 0;
-      	UrtTx(pADI_UART, str[i]);
-      	while (ucTxBufferEmpty == 0) {};
+		SendChar(str[i]);
 	}
-	
 }
 
-void ReadMsg(void){
-	uint8_t cnt = 0, ch ;
-	volatile uint8_t ucCOMIID0 = 0;
-
-	sprintf((char *)szTemp, "");
-	
-	do{
-		if ((ucCOMIID0 & 0x7) == 0x4){
-			ch = UrtRx(pADI_UART);
-			szTemp[cnt] = ch;
-			cnt++;
+uint8_t* ReadMsg(void){
+	uint8_t cnt = 0;
+	uint8_t str[128] = "";
+	while(TRUE){
+		if(ucRxBufferFull){
+			str[cnt++] = ucComRx;
+			ucRxBufferFull = FALSE;
+			if(ucComRx == '\0' || ucComRx == '\r' || ucComRx == '\n')
+				break;
 		}
-	}while(cnt == 3);
-
+	}
+	return str;
 }
 
 int main(){
-	sprintf((char *)szTemp, "Input Text\r\n");
-
 	//Initialize
    	Chip_Initialize();
 
-   	SendMsg(szTemp);
+   	SendMsg("Input Text\r\n");
    	while(TRUE){
-		SendMsg("HHH");
-		delay(100000);
-		if(ucUartError){
-		}
 		if(ucRxBufferFull){
-			SendMsg("MMMMMM");
-			ReadMsg();
-			SendMsg(szTemp);
-			sprintf((char *)szTemp, "");
-			sprintf((char *)szTemp, "Input Text\r\n");
-			SendMsg(szTemp);
-			ucRxBufferFull = 0;
+			//ReadMsg();
+			SendMsg(ReadMsg());
+			SendMsg("\r\n");
+			SendMsg("Input Text\r\n");
+			ucRxBufferFull = FALSE;
 		}
    	}
    	return 0;
@@ -131,9 +124,7 @@ void UART_Int_Handler()
    		ucTxBufferEmpty = TRUE;
    	}
    	if ((ucCOMIID0 & 0x7) == 0x4){       	// Receive byte
-	   ucRxBufferFull = TRUE;
-   	}
-	if ((ucCOMIID0 & 0x7) == 0x6){       	// error
-	   ucUartError = TRUE;
+		ucComRx = UrtRx(pADI_UART);
+	   	ucRxBufferFull = TRUE;
    	}
 }
