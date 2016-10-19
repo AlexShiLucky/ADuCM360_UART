@@ -1,0 +1,284 @@
+###############################################################################
+#
+# IAR ELF Linker V7.50.2.10312/W32 for ARM                18/Oct/2016  20:11:56
+# Copyright 2007-2015 IAR Systems AB.
+#
+#    Output file  =  
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\projects\iar\Debug\Exe\uart_program.out
+#    Map file     =  
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\projects\iar\Debug\List\uart_program.map
+#    Command line =  
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\projects\iar\Debug\Obj\ClkLib.o
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\projects\iar\Debug\Obj\DioLib.o
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\projects\iar\Debug\Obj\IntLib.o
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\projects\iar\Debug\Obj\main.o
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\projects\iar\Debug\Obj\Shico_Lib.o
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\projects\iar\Debug\Obj\startup_ADuCM360.o
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\projects\iar\Debug\Obj\UrtLib.o
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\projects\iar\Debug\Obj\WdtLib.o
+#        -o
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\projects\iar\Debug\Exe\uart_program.out
+#        --map
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\projects\iar\Debug\List\uart_program.map
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.3\arm\config\linker\AnalogDevices\ADuCM360.icf" --semihosting
+#        --entry __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x00000000 { ro section .intvec };
+"P1":  place in [from 0x00000000 to 0x0001ffff] { ro };
+"P2":  place in [from 0x20000000 to 0x20001fff] { rw, block CSTACK, block HEAP };
+
+  Section             Kind        Address    Size  Object
+  -------             ----        -------    ----  ------
+"A1":                                        0xe0
+  .intvec             ro code  0x00000000    0xe0  startup_ADuCM360.o [1]
+                             - 0x000000e0    0xe0
+
+"P1":                                      0x1126
+  .text               ro code  0x000000e0   0x62a  Shico_Lib.o [1]
+  .text               ro code  0x0000070c    0xd0  UrtLib.o [1]
+  .text               ro code  0x000007dc    0x16  strchr.o [4]
+  .text               ro code  0x000007f2     0xc  tolower.o [3]
+  .text               ro code  0x00000800    0x44  strcpy_unaligned.o [4]
+  .text               ro code  0x00000844     0x8  atoi.o [3]
+  .text               ro code  0x0000084c     0x6  ABImemclr4.o [4]
+  .text               ro code  0x00000854    0x36  strlen.o [4]
+  .text               ro code  0x0000088c   0x19c  xstoul.o [3]
+  .text               ro code  0x00000a28    0x32  ABImemset48.o [4]
+  .text               ro code  0x00000a5c    0x58  memchr.o [4]
+  .text               ro code  0x00000ab4     0xc  errno.o [3]
+  .text               ro code  0x00000ac0     0x2  xtls.o [3]
+  .text               ro code  0x00000ac4   0x274  main.o [1]
+  .text               ro code  0x00000d38    0x20  WdtLib.o [1]
+  .text               ro code  0x00000d58    0x60  ClkLib.o [1]
+  .text               ro code  0x00000db8    0x12  DioLib.o [1]
+  .rodata             const    0x00000dcc    0x40  main.o [1]
+  .rodata             const    0x00000e0c    0x40  main.o [1]
+  .rodata             const    0x00000e4c    0x40  main.o [1]
+  .rodata             const    0x00000e8c    0x40  main.o [1]
+  .rodata             const    0x00000ecc    0x40  main.o [1]
+  .rodata             const    0x00000f0c    0x40  main.o [1]
+  .rodata             const    0x00000f4c    0x40  main.o [1]
+  .rodata             const    0x00000f8c    0x40  main.o [1]
+  .rodata             const    0x00000fcc    0x40  main.o [1]
+  .rodata             const    0x0000100c    0x40  main.o [1]
+  .rodata             const    0x0000104c    0x40  main.o [1]
+  .rodata             const    0x0000108c    0x38  main.o [1]
+  .text               ro code  0x000010c4    0x38  packbits_init_single.o [4]
+  .rodata             const    0x000010fc    0x28  Shico_Lib.o [1]
+  .rodata             const    0x00001124    0x28  Shico_Lib.o [1]
+  .text               ro code  0x0000114c    0x28  data_init.o [4]
+  .iar.init_table     const    0x00001174    0x10  - Linker created -
+  .text               ro code  0x00001184    0x1a  cmain.o [4]
+  .text               ro code  0x0000119e     0x4  low_level_init.o [3]
+  .text               ro code  0x000011a2     0x4  exit.o [3]
+  .text               ro code  0x000011a8     0xa  cexit.o [4]
+  .text               ro code  0x000011b4    0x14  exit.o [5]
+  .rodata             const    0x000011c8     0xc  main.o [1]
+  .text               ro code  0x000011d4     0xc  cstartup_M.o [4]
+  .rodata             const    0x000011e0     0x8  main.o [1]
+  .rodata             const    0x000011e8     0x8  Shico_Lib.o [1]
+  .rodata             const    0x000011f0     0x8  Shico_Lib.o [1]
+  .rodata             const    0x000011f8     0x8  Shico_Lib.o [1]
+  .text               ro code  0x00001200     0x4  startup_ADuCM360.o [1]
+  .rodata             const    0x00001204     0x0  packbits_init_single.o [4]
+  Initializer bytes   const    0x00001204     0x2  <for P2-1>
+                             - 0x00001206  0x1126
+
+"P2", part 1 of 2:                           0x47
+  P2-1                         0x20000000    0x47  <Init block>
+    __DLIB_PERTHREAD  inited   0x20000000     0x4  errno.o [3]
+    .bss              inited   0x20000004    0x40  main.o [1]
+    .bss              inited   0x20000044     0x1  Shico_Lib.o [1]
+    .bss              inited   0x20000045     0x1  Shico_Lib.o [1]
+    .bss              inited   0x20000046     0x1  Shico_Lib.o [1]
+                             - 0x20000047    0x47
+
+"P2", part 2 of 2:                          0x400
+  CSTACK                       0x20000048   0x400  <Block>
+    CSTACK            uninit   0x20000048   0x400  <Block tail>
+                             - 0x20000448   0x400
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0x2 (2% of destination):
+          0x00001204   0x2
+    1 destination range, total size 0x47:
+          0x20000000  0x47
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\projects\iar\Debug\Obj: [1]
+    ClkLib.o                     96
+    DioLib.o                     18
+    Shico_Lib.o               1 578      105        3
+    UrtLib.o                    208
+    WdtLib.o                     32
+    main.o                      628      781       64
+    startup_ADuCM360.o          228
+    -------------------------------------------------
+    Total:                    2 788      886       67
+
+command line: [2]
+    -------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    atoi.o                        8
+    errno.o                      12                 4
+    exit.o                        4
+    low_level_init.o              4
+    tolower.o                    12
+    xstoul.o                    412
+    xtls.o                        2
+    -------------------------------------------------
+    Total:                      454                 4
+
+rt7M_tl.a: [4]
+    ABImemclr4.o                  6
+    ABImemset48.o                50
+    cexit.o                      10
+    cmain.o                      26
+    cstartup_M.o                 12
+    data_init.o                  40
+    memchr.o                     88
+    packbits_init_single.o       56
+    strchr.o                     22
+    strcpy_unaligned.o           68
+    strlen.o                     54
+    -------------------------------------------------
+    Total:                      432
+
+shb_l.a: [5]
+    exit.o                       20
+    -------------------------------------------------
+    Total:                       20
+
+    Gaps                         16        2
+    Linker created                        16    1 024
+-----------------------------------------------------
+    Grand Total:              3 710      904    1 095
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.iar.init_table$$Base   0x00001174          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x00001184          --   Gb  - Linker created -
+?main                   0x00001185         Code  Gb  cmain.o [4]
+CSTACK$$Base            0x20000048          --   Gb  - Linker created -
+CSTACK$$Limit           0x20000448          --   Gb  - Linker created -
+Chip_Initialize         0x00000b09   0x86  Code  Gb  main.o [1]
+ClkCfg                  0x00000d59   0x20  Code  Gb  ClkLib.o [1]
+ClkDis                  0x00000da5    0x8  Code  Gb  ClkLib.o [1]
+ClkSel                  0x00000d79   0x2c  Code  Gb  ClkLib.o [1]
+DioCfg                  0x00000db9    0x6  Code  Gb  DioLib.o [1]
+DioOen                  0x00000dbf    0x6  Code  Gb  DioLib.o [1]
+DioPul                  0x00000dc5    0x6  Code  Gb  DioLib.o [1]
+DispMemData             0x000005ff   0x44  Code  Gb  Shico_Lib.o [1]
+GetStrTmp               0x20000046    0x1  Data  Gb  Shico_Lib.o [1]
+MemoryDump              0x000003bf  0x122  Code  Gb  Shico_Lib.o [1]
+MemorySet               0x000004e1  0x11e  Code  Gb  Shico_Lib.o [1]
+NVIC_EnableIRQ          0x00000ac5   0x14  Code  Lc  main.o [1]
+Region$$Table$$Base     0x00001174          --   Gb  - Linker created -
+Region$$Table$$Limit    0x00001184          --   Gb  - Linker created -
+UARTINIT                0x00000ad9   0x30  Code  Gb  main.o [1]
+UART_Int_Handler        0x00000c95   0x42  Code  Gb  main.o [1]
+UrtCfg                  0x0000070d   0x9a  Code  Gb  UrtLib.o [1]
+UrtIntCfg               0x000007d3    0x6  Code  Gb  UrtLib.o [1]
+UrtIntSta               0x000007d9    0x4  Code  Gb  UrtLib.o [1]
+UrtMod                  0x000007c9    0xa  Code  Gb  UrtLib.o [1]
+UrtRx                   0x000007c5    0x4  Code  Gb  UrtLib.o [1]
+UrtTx                   0x000007b5   0x10  Code  Gb  UrtLib.o [1]
+WdtCfg                  0x00000d39   0x1c  Code  Gb  WdtLib.o [1]
+__aeabi_errno_addr      0x00000ab5    0x6  Code  Gb  errno.o [3]
+__aeabi_memclr4         0x0000084d         Code  Gb  ABImemclr4.o [4]
+__cmain                 0x00001185         Code  Gb  cmain.o [4]
+__exit                  0x000011b5   0x14  Code  Gb  exit.o [5]
+__iar_Errno             0x20000000    0x4  Data  Gb  errno.o [3]
+__iar_Memchr            0x00000a5d         Code  Gb  memchr.o [4]
+__iar_Memset4_word      0x00000a29         Code  Gb  ABImemset48.o [4]
+__iar_Memset8_word      0x00000a29         Code  Gb  ABImemset48.o [4]
+__iar_Stoul             0x000009d5    0x4  Code  Gb  xstoul.o [3]
+__iar_Stoulx            0x0000088d  0x142  Code  Gb  xstoul.o [3]
+__iar_Strchr            0x000007dd         Code  Gb  strchr.o [4]
+__iar_data_init3        0x0000114d   0x28  Code  Gb  data_init.o [4]
+__iar_dlib_perthread_access
+                        0x00000ac1    0x2  Code  Gb  xtls.o [3]
+__iar_packbits_init_single3
+                        0x000010c5   0x38  Code  Gb  packbits_init_single.o [4]
+__iar_program_start     0x000011d5         Code  Gb  cstartup_M.o [4]
+__iar_unaligned_strcpy  0x00000801         Code  Gb  strcpy_unaligned.o [4]
+__low_level_init        0x0000119f    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00000000         Data  Gb  startup_ADuCM360.o [1]
+_call_main              0x00001191         Code  Gb  cmain.o [4]
+_exit                   0x000011a9         Code  Gb  cexit.o [4]
+_main                   0x0000119b         Code  Gb  cmain.o [4]
+atoi                    0x00000845    0x8  Code  Gb  atoi.o [3]
+digits                  0x000009d8   0x28  Data  Lc  xstoul.o [3]
+do_div                  0x000003a9   0x16  Code  Gb  Shico_Lib.o [1]
+exit                    0x000011a3    0x4  Code  Gb  exit.o [3]
+getc                    0x00000187   0x1c  Code  Gb  Shico_Lib.o [1]
+gets                    0x00000137   0x50  Code  Gb  Shico_Lib.o [1]
+hextoint                0x000000ed   0x4a  Code  Gb  Shico_Lib.o [1]
+main                    0x00000bf3   0xa2  Code  Gb  main.o [1]
+memchr                  0x00000a5d         Code  Gb  memchr.o [4]
+menu_display            0x00000b8f   0x64  Code  Gb  main.o [1]
+ndigs                   0x00000a00   0x28  Data  Lc  xstoul.o [3]
+number                  0x00000291   0x94  Code  Gb  Shico_Lib.o [1]
+printf                  0x000001ff   0x1c  Code  Gb  Shico_Lib.o [1]
+putc                    0x000001b9   0x46  Code  Gb  Shico_Lib.o [1]
+puts                    0x000001a3   0x16  Code  Gb  Shico_Lib.o [1]
+sprintf                 0x0000021b   0x76  Code  Gb  Shico_Lib.o [1]
+stoi                    0x0000066d   0x9e  Code  Gb  Shico_Lib.o [1]
+strchr                  0x000007dd         Code  Gb  strchr.o [4]
+strlen                  0x00000855         Code  Gb  strlen.o [4]
+szTemp                  0x20000004   0x40  Data  Gb  main.o [1]
+tolower                 0x000007f3    0xc  Code  Gb  tolower.o [3]
+ucTxBufferEmpty         0x20000044    0x1  Data  Gb  Shico_Lib.o [1]
+ucWaitForUart           0x20000045    0x1  Data  Gb  Shico_Lib.o [1]
+unsigned_divide         0x0000032d   0x7c  Code  Gb  Shico_Lib.o [1]
+write_reg               0x000000e1    0xc  Code  Gb  Shico_Lib.o [1]
+
+
+[1] = D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\projects\iar\Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  3 710 bytes of readonly  code memory
+    904 bytes of readonly  data memory
+  1 095 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
