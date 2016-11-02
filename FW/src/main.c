@@ -69,6 +69,7 @@ void Chip_Initialize(){
    GPIOInit();
    UARTInit();
    NVIC_EnableIRQ(UART_IRQn);
+   NVIC_EnableIRQ(ADC1_IRQn);
 }
 
 void SendChar(uint8_t ch){
@@ -91,6 +92,7 @@ uint8_t* ReadMsg(void){
 	uint8_t str[128] = "";
 	while(TRUE){
 		if(ucRxBufferFull){
+			//ucComRx = UrtRx(pADI_UART);
 			str[cnt++] = ucComRx;
 			ucRxBufferFull = FALSE;
 			if(ucComRx == '\0' || ucComRx == '\r' || ucComRx == '\n')
@@ -114,9 +116,17 @@ int main(){
 			ucRxBufferFull = FALSE;
 		}
    	}
-   	return 0;
 }
 
+
+void Test_Function(){
+	uint32_t i = 0 ;
+
+	ucComRx = UrtRx(pADI_UART);
+	while(i<1000){
+		i++;
+	}
+}
 void UART_Int_Handler()
 {
 	ucCOMIID0 = UrtIntSta(pADI_UART);   	// Read UART Interrupt ID register
@@ -124,7 +134,7 @@ void UART_Int_Handler()
    		ucTxBufferEmpty = TRUE;
    	}
    	if ((ucCOMIID0 & 0x7) == 0x4){       	// Receive byte
-		ucComRx = UrtRx(pADI_UART);
-	   	ucRxBufferFull = TRUE;
+   		Test_Function();
+   		ucRxBufferFull = TRUE;
    	}
 }

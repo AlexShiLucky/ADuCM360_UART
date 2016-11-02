@@ -4,13 +4,11 @@
 -I
 D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\projects\iar\..\..\inc
 -I
-D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\projects\iar\..\..\inc\common
--I
-D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\projects\iar\..\..\inc\include
--I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\CMSIS\Include
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\inc\AnalogDevices
+-I
+D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\projects\iar\..\..\inc\common
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\inc
 -I
@@ -18,13 +16,11 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\inc\c
 -I
 D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\inc
 -I
-D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\inc\common
--I
-D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\inc\include
--I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\CMSIS\Include
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\inc\AnalogDevices
+-I
+D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\inc\common
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0
@@ -251,8 +247,8 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\inc\AnalogDevices
 -D__EDG_SYSV=0
 -D__EDG_ANSIC=1
 -D__EDG_CPP11_IL_EXTENSIONS_SUPPORTED=1
--D_DLIB_CONFIG_FILE_HEADER_NAME="C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\INC\c\DLib_Config_Normal.h"
--D_DLIB_CONFIG_FILE_STRING="C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 7.3\\arm\\INC\\c\\DLib_Config_Normal.h"
+-D_DLIB_CONFIG_FILE_HEADER_NAME="C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\INC\c\DLib_Config_Full.h"
+-D_DLIB_CONFIG_FILE_STRING="C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 7.3\\arm\\INC\\c\\DLib_Config_Full.h"
 -D__VERSION__="IAR ANSI C/C++ Compiler V7.50.2.10312/W32 for ARM"
 -D__CODE_MEMORY_LIST1__()=__CODE_MEM_HELPER1__(__code, 0 )
 -D__CODE_MEMORY_LIST2__(_P1)=__CODE_MEM_HELPER2__(__code, 0 ,  _P1 )
