@@ -30,8 +30,8 @@ void ClockInit(void){
 	//---------- Disable clock to unused peripherals ----------
    ClkDis(CLKDIS_DISSPI0CLK|CLKDIS_DISSPI1CLK|CLKDIS_DISI2CCLK|CLKDIS_DISPWMCLK|CLKDIS_DIST0CLK|CLKDIS_DIST1CLK);
 
-   // Select CD0 for CPU clock - 16Mhz clock
-   ClkCfg(CLK_CD0,CLK_HF,CLKSYSDIV_DIV2EN_DIS,CLK_UCLKCG);     
+   // Select CD0 for CPU clock - 2Mhz clock
+   ClkCfg(CLK_CD2,CLK_HF,CLKSYSDIV_DIV2EN_EN,CLK_UCLKCG);     
    ClkSel(CLK_CD7,CLK_CD7,CLK_CD0,CLK_CD7);     // Select CD0 for UART System clock
 }
 
@@ -39,7 +39,7 @@ void GPIOInit(void){
 	//---------- I/O Port Configuration ----------
    DioCfg(pADI_GP0, 0x9500);   // P0.7[TX], P0.6[RX]
    DioOen(pADI_GP0, 0x80); 
-   DioPul(pADI_GP0, 0x00);
+   DioPul(pADI_GP0, 0x80);
    
    DioCfg(pADI_GP1, 0x0000);   // GPIO1 Port Function Setting
    DioOen(pADI_GP1, 0xEF);
@@ -53,9 +53,9 @@ void GPIOInit(void){
 void UARTInit(void){
    //Select IO pins for UART.
    pADI_GP0->GPCON |= 0x9000;                   // Configure P0.6/P0.7 for UART
-   UrtCfg(pADI_UART,B9600,COMLCR_WLS_8BITS,0);  // setup baud rate for 9600, 8-bits
+   UrtCfg(pADI_UART,B1200,COMLCR_WLS_8BITS,COMLCR_PEN_EN);  // setup baud rate for 9600, 8-bits
    UrtMod(pADI_UART,COMMCR_DTR,0);              // Setup modem bits
-   UrtIntCfg(pADI_UART,COMIEN_ERBFI|COMIEN_ETBEI|COMIEN_ELSI|COMIEN_EDSSI|COMIEN_EDMAT|COMIEN_EDMAR);  // Setup UART IRQ sources
+   UrtIntCfg(pADI_UART,COMIEN_ERBFI|COMIEN_ETBEI);  // Setup UART IRQ sources
 }
 
 void delay(long int length){
@@ -89,7 +89,7 @@ void SendMsg(uint8_t *str){
 
 uint8_t* ReadMsg(void){
 	uint8_t cnt = 0;
-	uint8_t str[128] = "";
+	static uint8_t str[128] = "";
 	while(TRUE){
 		if(ucRxBufferFull){
 			//ucComRx = UrtRx(pADI_UART);
@@ -117,16 +117,6 @@ int main(){
 		}
    	}
 }
-
-
-void Test_Function(){
-	uint32_t i = 0 ;
-
-	ucComRx = UrtRx(pADI_UART);
-	while(i<1000){
-		i++;
-	}
-}
 void UART_Int_Handler()
 {
 	ucCOMIID0 = UrtIntSta(pADI_UART);   	// Read UART Interrupt ID register
@@ -134,7 +124,7 @@ void UART_Int_Handler()
    		ucTxBufferEmpty = TRUE;
    	}
    	if ((ucCOMIID0 & 0x7) == 0x4){       	// Receive byte
-   		Test_Function();
+   		ucComRx = UrtRx(pADI_UART);
    		ucRxBufferFull = TRUE;
    	}
 }

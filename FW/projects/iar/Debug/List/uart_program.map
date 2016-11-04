@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V7.50.2.10312/W32 for ARM                27/Oct/2016  20:27:13
+# IAR ELF Linker V7.50.2.10312/W32 for ARM                03/Nov/2016  14:34:19
 # Copyright 2007-2015 IAR Systems AB.
 #
 #    Output file  =  
@@ -47,40 +47,39 @@ __SystemLibrary = DLib
   .intvec          ro code  0x00000000   0xe0  startup_ADuCM360.o [1]
                           - 0x000000e0   0xe0
 
-"P1":                                   0x504
-  .text            ro code  0x000000e0  0x224  main.o [1]
-  .text            ro code  0x00000304   0x20  WdtLib.o [1]
-  .text            ro code  0x00000324   0x60  ClkLib.o [1]
-  .text            ro code  0x00000384   0x12  DioLib.o [1]
-  .text            ro code  0x00000398   0xd0  UrtLib.o [1]
-  .text            ro code  0x00000468   0x36  strlen.o [4]
-  .text            ro code  0x000004a0    0x6  ABImemclr.o [4]
-  .text            ro code  0x000004a8   0x5e  ABImemset.o [4]
-  .text            ro code  0x00000506   0x40  zero_init3.o [4]
-  .text            ro code  0x00000548   0x28  data_init.o [4]
-  .iar.init_table  const    0x00000570   0x10  - Linker created -
-  .text            ro code  0x00000580   0x1a  cmain.o [4]
-  .text            ro code  0x0000059a    0x4  low_level_init.o [3]
-  .text            ro code  0x0000059e    0x4  exit.o [3]
-  .text            ro code  0x000005a4    0xa  cexit.o [4]
-  .text            ro code  0x000005b0   0x14  exit.o [5]
-  .rodata          const    0x000005c4   0x10  main.o [1]
-  .text            ro code  0x000005d4    0xc  cstartup_M.o [4]
-  .text            ro code  0x000005e0    0x4  startup_ADuCM360.o [1]
-  .rodata          const    0x000005e4    0x0  zero_init3.o [4]
-                          - 0x000005e4  0x504
+"P1":                                   0x47c
+  .text            ro code  0x000000e0  0x204  main.o [1]
+  .text            ro code  0x000002e4   0x20  WdtLib.o [1]
+  .text            ro code  0x00000304   0x60  ClkLib.o [1]
+  .text            ro code  0x00000364   0x12  DioLib.o [1]
+  .text            ro code  0x00000378   0xd0  UrtLib.o [1]
+  .text            ro code  0x00000448   0x36  strlen.o [4]
+  .text            ro code  0x0000047e   0x40  zero_init3.o [4]
+  .text            ro code  0x000004c0   0x28  data_init.o [4]
+  .iar.init_table  const    0x000004e8   0x10  - Linker created -
+  .text            ro code  0x000004f8   0x1a  cmain.o [4]
+  .text            ro code  0x00000512    0x4  low_level_init.o [3]
+  .text            ro code  0x00000516    0x4  exit.o [3]
+  .text            ro code  0x0000051c    0xa  cexit.o [4]
+  .text            ro code  0x00000528   0x14  exit.o [5]
+  .rodata          const    0x0000053c   0x10  main.o [1]
+  .text            ro code  0x0000054c    0xc  cstartup_M.o [4]
+  .text            ro code  0x00000558    0x4  startup_ADuCM360.o [1]
+  .rodata          const    0x0000055c    0x0  zero_init3.o [4]
+                          - 0x0000055c  0x47c
 
-"P2", part 1 of 2:                        0x4
-  .bss             zero     0x20000000    0x1  main.o [1]
-  .bss             zero     0x20000001    0x1  main.o [1]
-  .bss             zero     0x20000002    0x1  main.o [1]
-  .bss             zero     0x20000003    0x1  main.o [1]
-                          - 0x20000004    0x4
+"P2", part 1 of 2:                       0x84
+  .bss             zero     0x20000000   0x80  main.o [1]
+  .bss             zero     0x20000080    0x1  main.o [1]
+  .bss             zero     0x20000081    0x1  main.o [1]
+  .bss             zero     0x20000082    0x1  main.o [1]
+  .bss             zero     0x20000083    0x1  main.o [1]
+                          - 0x20000084   0x84
 
 "P2", part 2 of 2:                      0x400
-  CSTACK                    0x20000008  0x400  <Block>
-    CSTACK         uninit   0x20000008  0x400  <Block tail>
-                          - 0x20000408  0x400
+  CSTACK                    0x20000088  0x400  <Block>
+    CSTACK         uninit   0x20000088  0x400  <Block tail>
+                          - 0x20000488  0x400
 
 
 *******************************************************************************
@@ -90,8 +89,8 @@ __SystemLibrary = DLib
           Address     Size
           -------     ----
 Zero (__iar_zero_init3)
-    1 destination range, total size 0x4:
-          0x20000000   0x4
+    1 destination range, total size 0x84:
+          0x20000000  0x84
 
 
 
@@ -106,10 +105,10 @@ D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\projects\iar\Debug\Obj: [1]
     DioLib.o                 18
     UrtLib.o                208
     WdtLib.o                 32
-    main.o                  548       16        4
+    main.o                  516       16      132
     startup_ADuCM360.o      228
     ---------------------------------------------
-    Total:                1 130       16        4
+    Total:                1 098       16      132
 
 command line: [2]
     ---------------------------------------------
@@ -122,8 +121,6 @@ dl7M_tlf.a: [3]
     Total:                    8
 
 rt7M_tl.a: [4]
-    ABImemclr.o               6
-    ABImemset.o              94
     cexit.o                  10
     cmain.o                  26
     cstartup_M.o             12
@@ -131,17 +128,17 @@ rt7M_tl.a: [4]
     strlen.o                 54
     zero_init3.o             64
     ---------------------------------------------
-    Total:                  306
+    Total:                  206
 
 shb_l.a: [5]
     exit.o                   20
     ---------------------------------------------
     Total:                   20
 
-    Gaps                     12
+    Gaps                      8
     Linker created                    16    1 024
 -------------------------------------------------
-    Grand Total:          1 476       32    1 028
+    Grand Total:          1 340       32    1 156
 
 
 *******************************************************************************
@@ -150,56 +147,53 @@ shb_l.a: [5]
 
 Entry                      Address  Size  Type      Object
 -----                      -------  ----  ----      ------
-.iar.init_table$$Base   0x00000570         --   Gb  - Linker created -
-.iar.init_table$$Limit  0x00000580         --   Gb  - Linker created -
-?main                   0x00000581        Code  Gb  cmain.o [4]
-CSTACK$$Base            0x20000008         --   Gb  - Linker created -
-CSTACK$$Limit           0x20000408         --   Gb  - Linker created -
+.iar.init_table$$Base   0x000004e8         --   Gb  - Linker created -
+.iar.init_table$$Limit  0x000004f8         --   Gb  - Linker created -
+?main                   0x000004f9        Code  Gb  cmain.o [4]
+CSTACK$$Base            0x20000088         --   Gb  - Linker created -
+CSTACK$$Limit           0x20000488         --   Gb  - Linker created -
 Chip_Initialize         0x000001a9  0x20  Code  Gb  main.o [1]
-ClkCfg                  0x00000325  0x20  Code  Gb  ClkLib.o [1]
-ClkDis                  0x00000371   0x8  Code  Gb  ClkLib.o [1]
-ClkSel                  0x00000345  0x2c  Code  Gb  ClkLib.o [1]
+ClkCfg                  0x00000305  0x20  Code  Gb  ClkLib.o [1]
+ClkDis                  0x00000351   0x8  Code  Gb  ClkLib.o [1]
+ClkSel                  0x00000325  0x2c  Code  Gb  ClkLib.o [1]
 ClockInit               0x00000109  0x22  Code  Gb  main.o [1]
-DioCfg                  0x00000385   0x6  Code  Gb  DioLib.o [1]
-DioOen                  0x0000038b   0x6  Code  Gb  DioLib.o [1]
-DioPul                  0x00000391   0x6  Code  Gb  DioLib.o [1]
+DioCfg                  0x00000365   0x6  Code  Gb  DioLib.o [1]
+DioOen                  0x0000036b   0x6  Code  Gb  DioLib.o [1]
+DioPul                  0x00000371   0x6  Code  Gb  DioLib.o [1]
 GPIOInit                0x0000012b  0x4e  Code  Gb  main.o [1]
 NVIC_EnableIRQ          0x000000e1  0x14  Code  Lc  main.o [1]
-ReadMsg                 0x0000020b  0x46  Code  Gb  main.o [1]
-Region$$Table$$Base     0x00000570         --   Gb  - Linker created -
-Region$$Table$$Limit    0x00000580         --   Gb  - Linker created -
+ReadMsg                 0x0000020b  0x38  Code  Gb  main.o [1]
+Region$$Table$$Base     0x000004e8         --   Gb  - Linker created -
+Region$$Table$$Limit    0x000004f8         --   Gb  - Linker created -
 SendChar                0x000001c9  0x1c  Code  Gb  main.o [1]
 SendMsg                 0x000001e5  0x26  Code  Gb  main.o [1]
-Test_Function           0x00000281  0x1a  Code  Gb  main.o [1]
 UARTInit                0x00000179  0x30  Code  Gb  main.o [1]
-UART_Int_Handler        0x0000029b  0x36  Code  Gb  main.o [1]
-UrtCfg                  0x00000399  0x9a  Code  Gb  UrtLib.o [1]
-UrtIntCfg               0x0000045f   0x6  Code  Gb  UrtLib.o [1]
-UrtIntSta               0x00000465   0x4  Code  Gb  UrtLib.o [1]
-UrtMod                  0x00000455   0xa  Code  Gb  UrtLib.o [1]
-UrtRx                   0x00000451   0x4  Code  Gb  UrtLib.o [1]
-UrtTx                   0x00000441  0x10  Code  Gb  UrtLib.o [1]
+UART_Int_Handler        0x00000273  0x3c  Code  Gb  main.o [1]
+UrtCfg                  0x00000379  0x9a  Code  Gb  UrtLib.o [1]
+UrtIntCfg               0x0000043f   0x6  Code  Gb  UrtLib.o [1]
+UrtIntSta               0x00000445   0x4  Code  Gb  UrtLib.o [1]
+UrtMod                  0x00000435   0xa  Code  Gb  UrtLib.o [1]
+UrtRx                   0x00000431   0x4  Code  Gb  UrtLib.o [1]
+UrtTx                   0x00000421  0x10  Code  Gb  UrtLib.o [1]
 WatchDogInit            0x000000f5  0x14  Code  Gb  main.o [1]
-WdtCfg                  0x00000305  0x1c  Code  Gb  WdtLib.o [1]
-__aeabi_memclr          0x000004a1        Code  Gb  ABImemclr.o [4]
-__cmain                 0x00000581        Code  Gb  cmain.o [4]
-__exit                  0x000005b1  0x14  Code  Gb  exit.o [5]
-__iar_Memset_word       0x000004a9        Code  Gb  ABImemset.o [4]
-__iar_data_init3        0x00000549  0x28  Code  Gb  data_init.o [4]
-__iar_program_start     0x000005d5        Code  Gb  cstartup_M.o [4]
-__iar_zero_init3        0x00000507  0x40  Code  Gb  zero_init3.o [4]
-__low_level_init        0x0000059b   0x4  Code  Gb  low_level_init.o [3]
+WdtCfg                  0x000002e5  0x1c  Code  Gb  WdtLib.o [1]
+__cmain                 0x000004f9        Code  Gb  cmain.o [4]
+__exit                  0x00000529  0x14  Code  Gb  exit.o [5]
+__iar_data_init3        0x000004c1  0x28  Code  Gb  data_init.o [4]
+__iar_program_start     0x0000054d        Code  Gb  cstartup_M.o [4]
+__iar_zero_init3        0x0000047f  0x40  Code  Gb  zero_init3.o [4]
+__low_level_init        0x00000513   0x4  Code  Gb  low_level_init.o [3]
 __vector_table          0x00000000        Data  Gb  startup_ADuCM360.o [1]
-_call_main              0x0000058d        Code  Gb  cmain.o [4]
-_exit                   0x000005a5        Code  Gb  cexit.o [4]
-_main                   0x00000597        Code  Gb  cmain.o [4]
-exit                    0x0000059f   0x4  Code  Gb  exit.o [3]
-main                    0x00000251  0x30  Code  Gb  main.o [1]
-strlen                  0x00000469        Code  Gb  strlen.o [4]
-ucCOMIID0               0x20000002   0x1  Data  Gb  main.o [1]
-ucComRx                 0x20000003   0x1  Data  Gb  main.o [1]
-ucRxBufferFull          0x20000001   0x1  Data  Gb  main.o [1]
-ucTxBufferEmpty         0x20000000   0x1  Data  Gb  main.o [1]
+_call_main              0x00000505        Code  Gb  cmain.o [4]
+_exit                   0x0000051d        Code  Gb  cexit.o [4]
+_main                   0x0000050f        Code  Gb  cmain.o [4]
+exit                    0x00000517   0x4  Code  Gb  exit.o [3]
+main                    0x00000243  0x30  Code  Gb  main.o [1]
+strlen                  0x00000449        Code  Gb  strlen.o [4]
+ucCOMIID0               0x20000082   0x1  Data  Gb  main.o [1]
+ucComRx                 0x20000083   0x1  Data  Gb  main.o [1]
+ucRxBufferFull          0x20000081   0x1  Data  Gb  main.o [1]
+ucTxBufferEmpty         0x20000080   0x1  Data  Gb  main.o [1]
 
 
 [1] = D:\001_Works\001_Working\20161018_UART_PROGRAM\FW\projects\iar\Debug\Obj
@@ -208,9 +202,9 @@ ucTxBufferEmpty         0x20000000   0x1  Data  Gb  main.o [1]
 [4] = rt7M_tl.a
 [5] = shb_l.a
 
-  1 476 bytes of readonly  code memory
+  1 340 bytes of readonly  code memory
      32 bytes of readonly  data memory
-  1 028 bytes of readwrite data memory
+  1 156 bytes of readwrite data memory
 
 Errors: none
 Warnings: none

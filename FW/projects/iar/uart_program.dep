@@ -6,35 +6,9 @@
   <configuration>
     <name>Debug</name>
     <outputs>
-      <file>$PROJ_DIR$\..\..\inc\common\UrtLib.c</file>
       <file>$PROJ_DIR$\..\..\inc\common\IntLib.c</file>
       <file>$PROJ_DIR$\..\..\inc\common\DioLib.c</file>
       <file>$PROJ_DIR$\..\..\inc\common\ClkLib.c</file>
-      <file>$PROJ_DIR$\..\..\inc\common\WdtLib.c</file>
-      <file>$PROJ_DIR$\..\..\src\main.c</file>
-      <file>$PROJ_DIR$\..\..\inc\common\IAR\startup_ADuCM360.s</file>
-      <file>$PROJ_DIR$\..\..\src\Shico_Lib.c</file>
-      <file>$PROJ_DIR$\Debug\Obj\uart_program.pbd</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.o</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Full.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
-      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmFunc.h</file>
-      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmInstr.h</file>
-      <file>$PROJ_DIR$\..\..\inc\common\DmaLib.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\ClkLib.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\ClkLib.o</file>
-      <file>$PROJ_DIR$\Debug\Obj\DioLib.o</file>
-      <file>$PROJ_DIR$\Debug\Obj\IntLib.o</file>
-      <file>$PROJ_DIR$\Debug\Obj\UrtLib.o</file>
-      <file>$PROJ_DIR$\Debug\Obj\WdtLib.o</file>
-      <file>$PROJ_DIR$\Debug\Obj\DioLib.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\IntLib.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\UrtLib.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\WdtLib.pbi</file>
-      <file>$PROJ_DIR$\Debug\List\uart_program.map</file>
-      <file>$TOOLKIT_DIR$\inc\c\xlocale.h</file>
       <file>$TOOLKIT_DIR$\inc\c\stdarg.h</file>
       <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
       <file>$TOOLKIT_DIR$\inc\c\xlocaleuse.h</file>
@@ -81,58 +55,57 @@
       <file>$PROJ_DIR$\Debug\Exe\uart_program.hex</file>
       <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
       <file>$TOOLKIT_DIR$\lib\dl7M_tlf.a</file>
+      <file>$PROJ_DIR$\..\..\inc\common\UrtLib.c</file>
+      <file>$PROJ_DIR$\..\..\inc\common\WdtLib.c</file>
+      <file>$PROJ_DIR$\..\..\src\main.c</file>
+      <file>$PROJ_DIR$\..\..\inc\common\IAR\startup_ADuCM360.s</file>
+      <file>$PROJ_DIR$\..\..\src\Shico_Lib.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\uart_program.pbd</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+      <file>$PROJ_DIR$\..\..\inc\common\DmaLib.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmInstr.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmFunc.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Full.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\ClkLib.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\ClkLib.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\DioLib.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\IntLib.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\UrtLib.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\WdtLib.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\DioLib.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\IntLib.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\UrtLib.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\WdtLib.pbi</file>
+      <file>$PROJ_DIR$\Debug\List\uart_program.map</file>
+      <file>$TOOLKIT_DIR$\inc\c\xlocale.h</file>
     </outputs>
-    <file>
-      <name>$PROJ_DIR$\..\..\inc\common\UrtLib.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 21</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 25</file>
-        </tool>
-        <tool>
-          <name>__cstat</name>
-          <file> 48</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 60 67 39 54 62 65 36 10 55 59 63 13 11 56 12 34 14</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 67 39 56 14 13 62 59 63 34 54 12 36 65 60 10 55 11</file>
-        </tool>
-      </inputs>
-    </file>
     <file>
       <name>$PROJ_DIR$\..\..\inc\common\IntLib.c</name>
       <outputs>
         <tool>
-          <name>ICCARM</name>
-          <file> 20</file>
+          <name>BICOMP</name>
+          <file> 70</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 24</file>
+          <name>ICCARM</name>
+          <file> 66</file>
         </tool>
         <tool>
           <name>__cstat</name>
-          <file> 51</file>
+          <file> 25</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>ICCARM</name>
-          <file> 33 67 39 54 62 65 36 10 55 59 63 13 11 56 12 34</file>
+          <name>BICOMP</name>
+          <file> 28 30 13 60 33 41 8 36 10 37 39 61 7 59 62 29</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 54 56 39 12 59 67 34 62 36 63 65 11 33 13 10 55</file>
+          <name>ICCARM</name>
+          <file> 7 41 13 28 36 39 10 62 29 33 37 59 61 30 60 8</file>
         </tool>
       </inputs>
     </file>
@@ -140,26 +113,26 @@
       <name>$PROJ_DIR$\..\..\inc\common\DioLib.c</name>
       <outputs>
         <tool>
-          <name>ICCARM</name>
-          <file> 19</file>
+          <name>BICOMP</name>
+          <file> 69</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 23</file>
+          <name>ICCARM</name>
+          <file> 65</file>
         </tool>
         <tool>
           <name>__cstat</name>
-          <file> 52</file>
+          <file> 26</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>ICCARM</name>
-          <file> 67 39 54 62 65 36 10 55 59 63 13 11 56 12 34 58</file>
+          <name>BICOMP</name>
+          <file> 13 61 36 39 62 32 8 28 60 29 41 59 10 33 37 30</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 39 11 62 65 10 58 34 54 12 55 67 13 36 59 63 56</file>
+          <name>ICCARM</name>
+          <file> 41 13 28 36 39 10 62 29 33 37 59 61 30 60 8 32</file>
         </tool>
       </inputs>
     </file>
@@ -167,112 +140,26 @@
       <name>$PROJ_DIR$\..\..\inc\common\ClkLib.c</name>
       <outputs>
         <tool>
-          <name>ICCARM</name>
-          <file> 18</file>
+          <name>BICOMP</name>
+          <file> 63</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 17</file>
+          <name>ICCARM</name>
+          <file> 64</file>
         </tool>
         <tool>
           <name>__cstat</name>
-          <file> 50</file>
+          <file> 24</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>ICCARM</name>
-          <file> 64 67 39 54 62 65 36 10 55 59 63 13 11 56 12 34</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
-          <file> 54 56 34 12 59 67 39 62 36 63 65 11 64 13 10 55</file>
+          <file> 28 30 8 60 33 41 13 36 10 37 39 61 38 59 62 29</file>
         </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\inc\common\WdtLib.c</name>
-      <outputs>
         <tool>
           <name>ICCARM</name>
-          <file> 22</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 26</file>
-        </tool>
-        <tool>
-          <name>__cstat</name>
-          <file> 47</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 57 67 39 54 62 65 36 10 55 59 63 13 11 56 12 34</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 54 56 39 12 59 67 34 62 36 63 65 11 57 13 10 55</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\src\main.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 9</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 73</file>
-        </tool>
-        <tool>
-          <name>__cstat</name>
-          <file> 49</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 16 62 65 36 10 55 59 63 68 15 35 66 67 39 54 13 11 56 12 34 57 64 58 33 60</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 62 13 64 10 65 66 67 33 68 55 34 35 57 58 60 15 36 59 63 39 56 16 54 12 11</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\inc\common\IAR\startup_ADuCM360.s</name>
-      <outputs>
-        <tool>
-          <name>AARM</name>
-          <file> 38</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\src\Shico_Lib.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 45</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 44</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 54 62 65 36 53 55 59 63 35 68 66 40 28 32 41 30 31 42 43 67 39 13 11 56 12 34 37</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 65 32 62 41 30 39 35 37 63 31 59 68 11 29 40 67 36 53 55 66 28 42 43 34 13 54 12 56</file>
+          <file> 38 41 13 28 36 39 10 62 29 33 37 59 61 30 60 8</file>
         </tool>
       </inputs>
     </file>
@@ -281,7 +168,7 @@
       <outputs>
         <tool>
           <name>ILINK</name>
-          <file> 61 27</file>
+          <file> 35 73</file>
         </tool>
       </outputs>
     </file>
@@ -290,17 +177,130 @@
       <outputs>
         <tool>
           <name>ILINK</name>
-          <file> 27</file>
+          <file> 73</file>
         </tool>
         <tool>
           <name>OBJCOPY</name>
-          <file> 72</file>
+          <file> 46</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ILINK</name>
-          <file> 46 18 19 20 9 38 21 22 69 71 70 74</file>
+          <file> 20 64 65 66 55 12 67 68 43 45 44 48</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\inc\common\UrtLib.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 71</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 67</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 22</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 41 13 30 56 59 36 33 37 8 28 60 10 39 34 62 29 61</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 34 41 13 28 36 39 10 62 29 33 37 59 61 30 60 8 56</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\inc\common\WdtLib.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 72</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 68</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 21</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28 30 13 60 33 41 8 36 10 37 39 61 31 59 62 29</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 31 41 13 28 36 39 10 62 29 33 37 59 61 30 60 8</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\src\main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 47</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 55</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 23</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 36 59 33 37 38 58 41 7 39 10 13 9 31 32 34 42 62 29 40 8 30 57 28 60 61</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 57 36 39 10 62 29 33 37 42 58 9 40 41 13 28 59 61 30 60 8 31 38 32 7 34</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\inc\common\IAR\startup_ADuCM360.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 12</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\src\Shico_Lib.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 18</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 19</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39 6 36 15 4 13 9 11 37 5 33 42 61 3 14 41 10 27 29 40 74 16 17 8 59 28 60 30</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 28 36 39 10 27 29 33 37 9 42 40 14 74 6 15 4 5 16 17 41 13 59 61 30 60 8 11</file>
         </tool>
       </inputs>
     </file>
