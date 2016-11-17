@@ -1,0 +1,13 @@
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\bin\armproc.dll" 
+
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\bin\armsim2.dll" 
+
+"D:\001_Works\001_Working\20161018_UART_PROGRAM\FW_TX\projects\iar\Debug\Exe\HART_Test_TX.out" 
+
+--plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\bin\armbat.dll" 
+
+--device_macro "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\config\debugger\AnalogDevices\ADuCM36x.dmac" 
+
+
+
+

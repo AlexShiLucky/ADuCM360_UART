@@ -8,6 +8,7 @@
 #include <DioLib.h>
 #include <IntLib.h>
 #include <UrtLib.h>
+#include <GptLib.h>
 
 #define TRUE		1
 #define FALSE		0
@@ -84,13 +85,12 @@ void SendMsg(uint8_t *str){
 
 uint8_t* ReadMsg(void){
 	uint8_t cnt = 0;
-	static uint8_t str[128] = "";
+	static uint8_t str[20] = "";
 	while(TRUE){
 		if(ucRxBufferFull){
-			//ucComRx = UrtRx(pADI_UART);
 			str[cnt++] = ucComRx;
 			ucRxBufferFull = FALSE;
-			if(ucComRx == '\0' || ucComRx == '\r' || ucComRx == '\n')
+			if(ucComRx == 0xFF)
 				break;
 		}
 	}
@@ -100,14 +100,12 @@ uint8_t* ReadMsg(void){
 int main(){
 	//Initialize
    	Chip_Initialize();
+	DioSet(pADI_GP0,PIN5);
 
-   	SendMsg("Input Text\r\n");
    	while(TRUE){
 		if(ucRxBufferFull){
-			//ReadMsg();
+			SendChar(0x10);
 			SendMsg(ReadMsg());
-			SendMsg("\r\n");
-			SendMsg("Input Text\r\n");
 			ucRxBufferFull = FALSE;
 		}
    	}

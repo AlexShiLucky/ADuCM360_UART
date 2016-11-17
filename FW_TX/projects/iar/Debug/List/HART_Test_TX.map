@@ -1,0 +1,214 @@
+###############################################################################
+#
+# IAR ELF Linker V7.50.2.10312/W32 for ARM                05/Nov/2016  11:27:56
+# Copyright 2007-2015 IAR Systems AB.
+#
+#    Output file  =  
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW_TX\projects\iar\Debug\Exe\HART_Test_TX.out
+#    Map file     =  
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW_TX\projects\iar\Debug\List\HART_Test_TX.map
+#    Command line =  
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW_TX\projects\iar\Debug\Obj\ClkLib.o
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW_TX\projects\iar\Debug\Obj\DioLib.o
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW_TX\projects\iar\Debug\Obj\GptLib.o
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW_TX\projects\iar\Debug\Obj\IntLib.o
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW_TX\projects\iar\Debug\Obj\main.o
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW_TX\projects\iar\Debug\Obj\startup_ADuCM360.o
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW_TX\projects\iar\Debug\Obj\UrtLib.o
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW_TX\projects\iar\Debug\Obj\WdtLib.o
+#        -o
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW_TX\projects\iar\Debug\Exe\HART_Test_TX.out
+#        --map
+#        D:\001_Works\001_Working\20161018_UART_PROGRAM\FW_TX\projects\iar\Debug\List\HART_Test_TX.map
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.3\arm\config\linker\AnalogDevices\ADuCM360.icf" --semihosting
+#        --entry __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x00000000 { ro section .intvec };
+"P1":  place in [from 0x00000000 to 0x0001ffff] { ro };
+"P2":  place in [from 0x20000000 to 0x20001fff] { rw, block CSTACK, block HEAP };
+
+  Section          Kind        Address   Size  Object
+  -------          ----        -------   ----  ------
+"A1":                                    0xe0
+  .intvec          ro code  0x00000000   0xe0  startup_ADuCM360.o [1]
+                          - 0x000000e0   0xe0
+
+"P1":                                   0x408
+  .text            ro code  0x000000e0  0x1ac  main.o [1]
+  .text            ro code  0x0000028c   0x20  WdtLib.o [1]
+  .text            ro code  0x000002ac   0x60  ClkLib.o [1]
+  .text            ro code  0x0000030c   0x22  DioLib.o [1]
+  .text            ro code  0x00000330   0xc0  UrtLib.o [1]
+  .text            ro code  0x000003f0   0x2c  GptLib.o [1]
+  .text            ro code  0x0000041c   0x40  zero_init3.o [4]
+  .text            ro code  0x0000045c   0x28  data_init.o [4]
+  .iar.init_table  const    0x00000484   0x10  - Linker created -
+  .text            ro code  0x00000494   0x1a  cmain.o [4]
+  .text            ro code  0x000004ae    0x4  low_level_init.o [3]
+  .text            ro code  0x000004b2    0x4  exit.o [3]
+  .text            ro code  0x000004b8    0xa  cexit.o [4]
+  .text            ro code  0x000004c4   0x14  exit.o [5]
+  .text            ro code  0x000004d8    0xc  cstartup_M.o [4]
+  .text            ro code  0x000004e4    0x4  startup_ADuCM360.o [1]
+  .rodata          const    0x000004e8    0x0  zero_init3.o [4]
+                          - 0x000004e8  0x408
+
+"P2", part 1 of 2:                        0x8
+  .bss             zero     0x20000000    0x4  main.o [1]
+  .bss             zero     0x20000004    0x1  main.o [1]
+  .bss             zero     0x20000005    0x1  main.o [1]
+  .bss             zero     0x20000006    0x1  main.o [1]
+  .bss             zero     0x20000007    0x1  main.o [1]
+                          - 0x20000008    0x8
+
+"P2", part 2 of 2:                      0x400
+  CSTACK                    0x20000008  0x400  <Block>
+    CSTACK         uninit   0x20000008  0x400  <Block tail>
+                          - 0x20000408  0x400
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x8:
+          0x20000000   0x8
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module              ro code  ro data  rw data
+    ------              -------  -------  -------
+D:\001_Works\001_Working\20161018_UART_PROGRAM\FW_TX\projects\iar\Debug\Obj: [1]
+    ClkLib.o                 96
+    DioLib.o                 34
+    GptLib.o                 44
+    UrtLib.o                192
+    WdtLib.o                 32
+    main.o                  428                 8
+    startup_ADuCM360.o      228
+    ---------------------------------------------
+    Total:                1 054                 8
+
+command line: [2]
+    ---------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                    4
+    low_level_init.o          4
+    ---------------------------------------------
+    Total:                    8
+
+rt7M_tl.a: [4]
+    cexit.o                  10
+    cmain.o                  26
+    cstartup_M.o             12
+    data_init.o              40
+    zero_init3.o             64
+    ---------------------------------------------
+    Total:                  152
+
+shb_l.a: [5]
+    exit.o                   20
+    ---------------------------------------------
+    Total:                   20
+
+    Gaps                      6
+    Linker created                    16    1 024
+-------------------------------------------------
+    Grand Total:          1 240       16    1 032
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address  Size  Type      Object
+-----                      -------  ----  ----      ------
+.iar.init_table$$Base   0x00000484         --   Gb  - Linker created -
+.iar.init_table$$Limit  0x00000494         --   Gb  - Linker created -
+?main                   0x00000495        Code  Gb  cmain.o [4]
+CSTACK$$Base            0x20000008         --   Gb  - Linker created -
+CSTACK$$Limit           0x20000408         --   Gb  - Linker created -
+Chip_Initialize         0x000001c3  0x24  Code  Gb  main.o [1]
+ClkCfg                  0x000002ad  0x20  Code  Gb  ClkLib.o [1]
+ClkDis                  0x000002f9   0x8  Code  Gb  ClkLib.o [1]
+ClkSel                  0x000002cd  0x2c  Code  Gb  ClkLib.o [1]
+ClockInit               0x00000113  0x22  Code  Gb  main.o [1]
+DioCfg                  0x0000030d   0x6  Code  Gb  DioLib.o [1]
+DioClr                  0x00000325   0xa  Code  Gb  DioLib.o [1]
+DioOen                  0x00000313   0x6  Code  Gb  DioLib.o [1]
+DioPul                  0x00000319   0x6  Code  Gb  DioLib.o [1]
+DioSet                  0x0000031f   0x6  Code  Gb  DioLib.o [1]
+GPIOInit                0x00000135  0x4e  Code  Gb  main.o [1]
+GP_Tmr0_Int_Handler     0x0000024b  0x18  Code  Gb  main.o [1]
+GptCfg                  0x000003f1  0x20  Code  Gb  GptLib.o [1]
+GptClrInt               0x00000417   0x6  Code  Gb  GptLib.o [1]
+GptLd                   0x00000411   0x6  Code  Gb  GptLib.o [1]
+NVIC_EnableIRQ          0x000000e1  0x14  Code  Lc  main.o [1]
+Region$$Table$$Base     0x00000484         --   Gb  - Linker created -
+Region$$Table$$Limit    0x00000494         --   Gb  - Linker created -
+TIMER0_Init             0x000001a7  0x1c  Code  Gb  main.o [1]
+UARTInit                0x00000183  0x24  Code  Gb  main.o [1]
+UART_Int_Handler        0x0000020f  0x3c  Code  Gb  main.o [1]
+UrtCfg                  0x00000331  0x9a  Code  Gb  UrtLib.o [1]
+UrtIntCfg               0x000003e7   0x6  Code  Gb  UrtLib.o [1]
+UrtIntSta               0x000003ed   0x4  Code  Gb  UrtLib.o [1]
+UrtMod                  0x000003dd   0xa  Code  Gb  UrtLib.o [1]
+UrtRx                   0x000003d9   0x4  Code  Gb  UrtLib.o [1]
+WatchDogInit            0x00000105   0xe  Code  Gb  main.o [1]
+WdtCfg                  0x0000028d  0x1c  Code  Gb  WdtLib.o [1]
+__cmain                 0x00000495        Code  Gb  cmain.o [4]
+__exit                  0x000004c5  0x14  Code  Gb  exit.o [5]
+__iar_data_init3        0x0000045d  0x28  Code  Gb  data_init.o [4]
+__iar_program_start     0x000004d9        Code  Gb  cstartup_M.o [4]
+__iar_zero_init3        0x0000041d  0x40  Code  Gb  zero_init3.o [4]
+__low_level_init        0x000004af   0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00000000        Data  Gb  startup_ADuCM360.o [1]
+_call_main              0x000004a1        Code  Gb  cmain.o [4]
+_exit                   0x000004b9        Code  Gb  cexit.o [4]
+_main                   0x000004ab        Code  Gb  cmain.o [4]
+delay_ms                0x000000f5  0x10  Code  Gb  main.o [1]
+dly_cnt                 0x20000000   0x4  Data  Gb  main.o [1]
+exit                    0x000004b3   0x4  Code  Gb  exit.o [3]
+main                    0x000001e7  0x28  Code  Gb  main.o [1]
+ucCOMIID0               0x20000006   0x1  Data  Gb  main.o [1]
+ucComRx                 0x20000007   0x1  Data  Gb  main.o [1]
+ucRxBufferFull          0x20000005   0x1  Data  Gb  main.o [1]
+ucTxBufferEmpty         0x20000004   0x1  Data  Gb  main.o [1]
+
+
+[1] = D:\001_Works\001_Working\20161018_UART_PROGRAM\FW_TX\projects\iar\Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  1 240 bytes of readonly  code memory
+     16 bytes of readonly  data memory
+  1 032 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

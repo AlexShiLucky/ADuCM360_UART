@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>1762101661</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\..\..\inc\common\ClkLib.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\AnalogDevices\aducm360.h</file>
+      <file>$TOOLKIT_DIR$\inc\AnalogDevices\system_ADuCM360.h</file>
+      <file>$PROJ_DIR$\..\..\inc\common\WdtLib.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\..\..\inc\common\core_cm3.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+      <file>$PROJ_DIR$\..\..\inc\common\DioLib.h</file>
+      <file>$PROJ_DIR$\..\..\inc\common\UrtLib.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Full.h</file>
+      <file>$PROJ_DIR$\..\..\inc\common\IntLib.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\Debug\Exe\HART_Test_RX.out</file>
+      <file>$PROJ_DIR$\Debug\Exe\HART_Test_RX.hex</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\HART_Test_RX.pbd</file>
+      <file>$PROJ_DIR$\..\..\src\main.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+      <file>$PROJ_DIR$\..\..\inc\common\IAR\startup_ADuCM360.s</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\startup_ADuCM360.o</file>
+      <file>$PROJ_DIR$\..\..\inc\common\ClkLib.c</file>
+      <file>$PROJ_DIR$\..\..\inc\common\DioLib.c</file>
+      <file>$PROJ_DIR$\..\..\inc\common\GptLib.h</file>
+      <file>$PROJ_DIR$\..\..\inc\common\IntLib.c</file>
+      <file>$PROJ_DIR$\..\..\inc\common\UrtLib.c</file>
+      <file>$PROJ_DIR$\..\..\inc\common\WdtLib.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\DioLib.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\ClkLib.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\IntLib.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\UrtLib.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\WdtLib.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\DioLib.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\ClkLib.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\IntLib.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\UrtLib.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\WdtLib.pbi</file>
+      <file>$PROJ_DIR$\..\..\inc\common\DmaLib.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\IntLib.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\UrtLib.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\WdtLib.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\ClkLib.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\DioLib.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\GptLib.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\GptLib.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cm3.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmInstr.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmFunc.h</file>
+      <file>$PROJ_DIR$\..\..\inc\common\GptLib.c</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tlf.a</file>
+      <file>$PROJ_DIR$\Debug\List\HART_Test_RX.map</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
+      <file>$TOOLKIT_DIR$\config\linker\AnalogDevices\ADuCM360.icf</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 21 61</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\HART_Test_RX.out</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 61</file>
+        </tool>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 22</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 64 37 36 53 38 26 29 39 40 62 65 63 60</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\src\main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 23</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 26</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 49</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 2 58 32 55 1 16 20 18 3 17 28 0 4 9 10 5 11 12 14 15 7 13 56 19 57 6</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 19 2 20 15 16 0 7 13 28 14 10 18 3 56 9 57 55 6 58 4 5 1 11 17 12 32</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\inc\common\IAR\startup_ADuCM360.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 29</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\inc\common\ClkLib.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 37</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 51</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9 6 4 58 7 3 56 2 15 13 20 55 1 57 16 0</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 1 3 56 9 2 20 15 16 0 7 13 57 55 6 58 4</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\inc\common\DioLib.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 41</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 36</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 52</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 56 55 2 20 16 11 4 9 58 0 3 57 15 7 13 6</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 3 56 9 2 20 15 16 0 7 13 57 55 6 58 4 11</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\inc\common\IntLib.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 38</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 47</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9 6 56 58 7 3 4 2 15 13 20 55 17 57 16 0</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 17 3 56 9 2 20 15 16 0 7 13 57 55 6 58 4</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\inc\common\UrtLib.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 39</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 48</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 3 56 6 46 57 2 7 13 4 9 58 15 20 12 16 0 55</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 12 3 56 9 2 20 15 16 0 7 13 57 55 6 58 4 46</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\inc\common\WdtLib.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 45</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 40</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 50</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9 6 56 58 7 3 4 2 15 13 20 55 5 57 16 0</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 5 3 56 9 2 20 15 16 0 7 13 57 55 6 58 4</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\inc\common\GptLib.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 54</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 53</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9 6 4 58 7 3 56 2 15 13 20 55 32 57 16 0</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 32 3 56 9 2 20 15 16 0 7 13 57 55 6 58 4</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+
